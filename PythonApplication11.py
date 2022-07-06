@@ -8,14 +8,14 @@ kpn = ["rock", "paper", "scissors"]
 #animacja tekstu
 def animacja_tekstu(tekst):
     for i in tekst:
-        print '\b'+i, 
+        print (i, end='') 
         time.sleep(0.02)
     print("")
 
 #wstep do pokoju z bajkami i wybor: stolik, karaoke czy parkiet?
 def fairy_tales():
     animacja_tekstu("You came to a really strange place... \nWhat a colorful world! It is absolutely incomparable to the earlier room. \nYou see lots of well known faces.\nThere are Anna, Elsa, Winnie the Pooh, Buzz Astral, even Timon and Pumba sitting at the table.\nThey're drinking tea. \nBehind there are  Blossom, Bubbles and Buttercup dancing with Snow White and Peter Pan. \nPinocchio with Little Red Riding Hood are singing karaoke. \nThey're pretty good. They're singing 'Dancing Queen'. \nYou can't believe your own eyes. Honestly, I totally get that. \nBut it looks like a safe place. Those guys still didn't notice that you came in, \nhowever - you have to make a decision. You can't stand there like that. \nWhat are you doing? \nPress A if you decided to walk to the guys at the table. \nPress B if you wanna start performing on karaoke. \nPress C if you're thinking 'Let's dance- 'Dancing Queen' is my favourite piece!")
-    choice1 = raw_input()
+    choice1 = input()
     choice1 = choice1.lower()
     if choice1 == "a":
         os.system("cls")
@@ -33,7 +33,7 @@ def fairy_tales():
 #parkiet-bajki
 def dance():
     animacja_tekstu("You start dancing but, to be honest, you suck... \nChoose something else. \nPress A if you decided to walk to the guys at the table. \nPress B if you wanna start performing on karaoke.")
-    choicee = raw_input()
+    choicee = input()
     choicee = choicee.lower()
     if choicee == "a":
         os.system("cls")
@@ -48,7 +48,7 @@ def dance():
 #stolik-bajki
 def table():
     animacja_tekstu("At the table you see two free sits. \nYou can choose if you want sit next to Buzz Astral or Elsa. \nPress name of character: ")
-    name = raw_input()
+    name = input()
     name = name.lower()
     if (name == "buzz astral" or name == "buzz"):
         os.system("cls")
@@ -63,7 +63,7 @@ def table():
 #buzz-stolik-bajki
 def buzz():
     animacja_tekstu("You sit next to Buzz. \nYou start a conversation, introduce yourself and tell what happened to you before. \nHe suggests: Let's play 'Rock, paper, scisssors'! \nIf you win, I will help you get out of here. \nDo you agree? \nA-Yes, at least there is some hope... \nB-No, thanks. I prefer to sit next to Elsa. \nPress A or B: ")
-    choice1=raw_input()
+    choice1=input()
     choice1=choice1.lower()
     if choice1=="a":
         os.system("cls")
@@ -78,7 +78,7 @@ def buzz():
 #kamien, papier, nozyce
 def rps():
     animacja_tekstu("Press: rock, paper or scissors?")
-    your_choice = raw_input()
+    your_choice = input()
     your_choice = your_choice.lower()
     i = randint(0,2)
     buzz_choice = kpn[i]
@@ -103,7 +103,7 @@ def rps():
 #przegranie w kamien, papier, nozyce
 def lost_rps():
     animacja_tekstu("You lost! \nIt's a game for life and death. \nBut you have your last chance to save. \nWhere do you run? \nL - left \nR - right \nPress L or R: ")
-    choice = raw_input()
+    choice = input()
     choice = choice.lower()
     if choice == "l":
         os.system("cls")
@@ -129,7 +129,7 @@ def elsa():
 #karaoke-bajki
 def karaoke():
     animacja_tekstu("There's no one on waiting list, so you're next. \nWhat song do you want to sing? \nPress a title: ")
-    song = raw_input()
+    song = input()
     os.system("cls")
     animacja_tekstu("3...")
     animacja_tekstu("2...")
@@ -143,7 +143,7 @@ def karaoke():
 def stay_or_run():
     animacja_tekstu("Press A if you decide to run away.")
     animacja_tekstu("Press B if you don't care- show must go on!")
-    choice1 = raw_input()
+    choice1 = input()
     choice1 = choice1.lower()
     os.system("cls")
     if choice1 == "a":
@@ -163,7 +163,7 @@ def stay_or_run():
 #wybor karaoke-bajki, przegranie
 def stay_and_sing():
     animacja_tekstu("They're screaming. You see madness in theirs eyes. \nThey look nothing like your favourite characters from childhood even though they look the same. \nYou're scared \nDo you want to run away now? \nPress Yes or No: ")
-    choice2 = raw_input()
+    choice2 = input()
     choice2 = choice2.lower() 
     os.system("cls")
     if choice2 == "yes":
@@ -178,7 +178,7 @@ def stay_and_sing():
 #hannibal, wstep
 def hannibal():
     animacja_tekstu("You hear music. It's Beethoven's 5th Symphony. \nLooking around. \nOn the left side you see lots of books. \nMost of them is about anatomy. \nNext to the books there are refrigerators. \nYou hear that there is someone behind the books. \nOn the right side there is the door. \nYou can go either left or right. \nL-go left \nR-go right \nPress L or R: ")
-    direct=raw_input()
+    direct=input()
     direct=direct.lower()
     os.system("cls")
     if direct == "l":
@@ -196,7 +196,7 @@ def hannibal():
 #hannibal- rozmowa, pobicie czy szukanie?
 def left():
     animacja_tekstu("You see a man sitting at the desk and working. \nA-come to him and start conversation \nB-fall on him from behind, sneak up and hit him on the head \nC-go right to the refrigerators \nPress A, B or C:")
-    hannibal_choice = raw_input()
+    hannibal_choice = input()
     hannibal_choice = hannibal_choice.lower() 
     os.system("cls")
     if hannibal_choice == "a":
@@ -221,7 +221,7 @@ def left():
 def nice_talk():
     animacja_tekstu("You two have a nice conversation. It turnes out that he used to be psychiatrist. \nNow he helps police in catching criminals.")
     animacja_tekstu("He askes you: Are you hungry? \nPress Yes or No: ")
-    hungry = raw_input()
+    hungry = input()
     hungry = hungry.lower()
     os.system("cls")
     if hungry == "yes":
@@ -239,7 +239,7 @@ def nice_talk():
 #hannibal-obiad
 def y_hungry():
     animacja_tekstu("You go through the room and sit at the table. \nYour host layes the table and goes to the kitchen for his 'signature dish'. \nHe ensures you that it is delightful \nYou try it. \nIt tastes weird. \nIt's meat but it has sweet taste. \nYou also notice that guy is a little bit creepy. \nA- ask him what exactly 'signature dish' is \nB- excuse him and secretly go looking around for key to the door \nPress A or B: ")
-    aft_dinner = raw_input()
+    aft_dinner = input()
     aft_dinner = aft_dinner.lower()
     os.system("cls")
     if aft_dinner == "a":
@@ -254,7 +254,7 @@ def y_hungry():
 #hannibal-ucieczka czy zabicie?
 def last():
     animacja_tekstu("He excuses you for a moment and brings you a photoalbum. \nHe asks you: The dinner was a little bit sweet, wasn't it? \nExactly like my ex-girlfriend: Jude! \nHe starts lauhging. \nIt's insane! \nHe tries to catch you. \nAre you trying to run away? \nA- Yes \nB- Actually no, I just ate human and I don't wanna live anymore... \nPress A or B: ")
-    last_choice = raw_input()
+    last_choice = input()
     last_choice = last_choice.lower()
     os.system("cls")
     if last_choice == "a":
@@ -274,7 +274,7 @@ def last():
 #hannibal- szukanie klucza
 def look_for():
     animacja_tekstu("Where do you want to search? \nA-Through the books \nB-Through the refrigerators \nPress A or B: ")
-    where = raw_input()
+    where = input()
     where = where.lower()
     os.system("cls")
     if where == "a":
@@ -297,7 +297,7 @@ def look_for():
 def harry_potter():
     animacja_tekstu("It's absolutely dark in here \nYou can't see anything. \nBut you hear a voice... \nIt's woman's laugh. Pretty scary laugh. \nThere is a bag next to you.")
     animacja_tekstu("You have two options: \nA- Follow the voice, \nB- Check what's in the bag \nPress A or B: ")
-    choice1 = raw_input()
+    choice1 = input()
     choice1 = choice1.lower()
     os.system("cls")
     if choice1 == "a":
@@ -312,7 +312,7 @@ def follow_harry():
     animacja_tekstu(("You are closer and closer. \nNow you can recognise words she singing. \nAnd you hear: \n'I killed %s lalalala'") % player_name)
     animacja_tekstu("You are terrified but I assure you- you are still alive. \nOr maybe I should say- You are alive yet...")
     animacja_tekstu("You have to options: \nA- you can still follow the voice, \nB- you can come back and check the bag\nPress A or B:  ")
-    choice2 = raw_input()
+    choice2 = input()
     choice2 = choice2.lower()
     os.system("cls")
     if choice2 == "a":
@@ -328,12 +328,12 @@ def follow_harry():
 def check_harry():
     animacja_tekstu("In the bag you find the wand and notebook 'The spells'")
     animacja_tekstu("Do you want to read the notebook? \nPress Yes or No: ")
-    choice_notebook = raw_input()
+    choice_notebook = input()
     choice_notebook = choice_notebook.lower()
     os.system("cls")
     if choice_notebook == "yes":
         for i in spells:
-            print i
+            print(i)
         time.sleep(6)
         os.system("cls")
         decision_harry()
@@ -347,7 +347,7 @@ def check_harry():
 #harry potter, final
 def decision_harry():
     animacja_tekstu("Your eyes adjust to darkness. \nYou notice the door in the distance. \nThe woman is coming. \nShe is Bellatrix Lestrange... \nShe smiles weirdly and she says: \n'Hello, darling!' \nWhat are you doing? \nA- run to the door \nB- use the wand \nC- check the spells in the notebook")
-    decision=raw_input()
+    decision=input()
     decision=decision.lower()
     os.system("cls")
     if decision == "a":
@@ -359,7 +359,7 @@ def decision_harry():
         press_spell()
     elif decision == "c":
         for i in spells:
-            print i
+            print(i)
         time.sleep(6)
         os.system("cls")
         decision_harry()
@@ -371,7 +371,7 @@ def decision_harry():
 #harry potter, rzucanie zaklecia
 def press_spell():
     animacja_tekstu("Press a spell: ")
-    spell1 = raw_input()
+    spell1 = input()
     spell1 = spell1.lower()
     os.system("cls")
     if spell1 == "avada kedavra":
@@ -394,7 +394,7 @@ def press_spell():
 #harry potter, przegranie
 def bellatrix():
     animacja_tekstu("And now you can see in the darkness. \nYou know that woman. \nShe is Bellatrix Lestrange... \nShe smiles and she says: \n'Hello, darling!' \nPress your response: ")
-    raw_input()
+    input()
     os.system("cls")
     animacja_tekstu("'Your words are unnecessery' \nShe pulls out her wand and scream: \n'AVADA KEDAVRA!'")
     animacja_tekstu("It's a killing curse, so... \nSorry, you're dead")
@@ -403,7 +403,7 @@ def bellatrix():
 def climbing():
     animacja_tekstu( "You almost reached the vent!")
     animacja_tekstu( "You need to make a choice: grab the left or right pipe.")
-    pipe = raw_input("Enter Left or Right: ")
+    pipe = input("Enter Left or Right: ")
     pipe = pipe.lower()
     os.system("cls")
     if pipe == "left":
@@ -442,7 +442,7 @@ def choice_joker():
     animacja_tekstu( "B - a rolling dice.")
     animacja_tekstu( "C - a flower.") 
     animacja_tekstu("")
-    your_joker_choice = raw_input("Enter A, B or C: ")
+    your_joker_choice = input("Enter A, B or C: ")
     your_joker_choice = your_joker_choice.upper()
     os.system("cls")
     if your_joker_choice == "A":
@@ -476,7 +476,7 @@ def choice_joker():
 def choice2():
     animacja_tekstu( "B is the rolling dice, C is the flower.")
     animacja_tekstu( "")
-    second_choice = raw_input("Enter B or C: ")
+    second_choice = input("Enter B or C: ")
     second_choice = second_choice.upper()
     animacja_tekstu( "")
     os.system("cls")
@@ -501,7 +501,7 @@ def choice3():
     animacja_tekstu( "B is the rolling dice, A is a deck of cards.")
     animacja_tekstu( "")
      
-    second_choice2 = raw_input("Enter A or B: ")
+    second_choice2 = input("Enter A or B: ")
     second_choice2 = second_choice2.upper()
     animacja_tekstu( "")
     os.system("cls")
@@ -529,7 +529,7 @@ def rolling_dice():
     os.system("cls")
 
     def get_user_guess():
-        guess = int(raw_input("Go ahead! Guess a number: "))
+        guess = int(input("Go ahead! Guess a number: "))
         os.system("cls")
         return guess
 
@@ -611,7 +611,7 @@ def escaping_joker():
     animacja_tekstu( "A - try to swing the chair and look for a sharp object.")
     animacja_tekstu( "B - try to bite off the rope you're tied with.")
     animacja_tekstu("")
-    option_escaping_joker = raw_input("Enter A or B: ")
+    option_escaping_joker = input("Enter A or B: ")
     option_escaping_joker = option_escaping_joker.upper()
     animacja_tekstu("")
     os.system("cls")
@@ -685,7 +685,7 @@ def freddy():
     animacja_tekstu( "You can either go left or right.")
     animacja_tekstu( "")
     def direction1():
-        direction = raw_input("Type in Left or Right: ")
+        direction = input("Type in Left or Right: ")
         direction = direction.lower()
         animacja_tekstu( "")
         os.system("cls")
@@ -696,7 +696,7 @@ def freddy():
             def vent1():
                 animacja_tekstu( "You can either climb it or keep on walking.")
                 animacja_tekstu("")
-                vent = raw_input("Type in Climb or Walk: ")
+                vent = input("Type in Climb or Walk: ")
                 vent = vent.lower()
                 animacja_tekstu( "")
                 os.system("cls")
@@ -716,7 +716,7 @@ def freddy():
         elif direction == "right":
             animacja_tekstu( "You find an underground tunnel.")
             def tunnel():
-                tunnel1 = raw_input("Type in E to enter it or K to keep on walking: ")
+                tunnel1 = input("Type in E to enter it or K to keep on walking: ")
                 tunnel1 = tunnel1.upper()
                 os.system("cls")
                 if tunnel1 == "E":
@@ -724,7 +724,7 @@ def freddy():
                      
                     def corpse():
                         animacja_tekstu( "You can continue to walk on them or leave the tunnel and continue walking through the boiling house")
-                        dead = raw_input("Type in C to continue walking or L to leave: ")
+                        dead = input("Type in C to continue walking or L to leave: ")
                         dead = dead.upper()
                         os.system("cls")
                         if dead == "C":
@@ -769,7 +769,7 @@ def pennywise():
      
     def follow():
         animacja_tekstu( "If you want to follow the voice enter Follow.")
-        scream = raw_input("If you want to go the other way enter Other way: ")
+        scream = input("If you want to go the other way enter Other way: ")
         scream = scream.lower()
         animacja_tekstu( "")
         os.system("cls")
@@ -783,7 +783,7 @@ def pennywise():
             os.system("cls")
             def crying_child():
                 animacja_tekstu( "If you want to help the child enter Help. ")
-                crying_kid = raw_input("If you want to leave enter Leave: ")
+                crying_kid = input("If you want to leave enter Leave: ")
                 crying_kid = crying_kid.lower()
                 animacja_tekstu( "")
                 os.system("cls")
@@ -796,7 +796,7 @@ def pennywise():
                         animacja_tekstu( "B - sneak behind Pennywise and try to choke him.")
                         animacja_tekstu( "")
                          
-                        helping = raw_input("Enter A or B: ")
+                        helping = input("Enter A or B: ")
                         helping = helping.upper()
                         animacja_tekstu( "")
                         os.system("cls")
@@ -850,7 +850,7 @@ def start():
     animacja_tekstu( "It's been abandoned for 20 years now, the legend says.") 
     animacja_tekstu( "You can either go in or leave.")
     animacja_tekstu( "")
-    enter = raw_input("Type in Enter if you want to come in, Leave if you want to leave: ")
+    enter = input("Type in Enter if you want to come in, Leave if you want to leave: ")
     enter = enter.lower()
     if enter == "leave":
         animacja_tekstu( "Congratulations! You survived. But you might have missed a great adventure...")
@@ -860,7 +860,7 @@ def start():
         animacja_tekstu( "One of them is black and in front of it there is a red balloon hanging.")
         animacja_tekstu( "The other one is blue and it has scratch marks on it.")
         animacja_tekstu( "")
-        colour = raw_input("Type in the colour of the door you want to go in: ")
+        colour = input("Type in the colour of the door you want to go in: ")
         colour = colour.lower()
         animacja_tekstu( "")
         if colour == "black":
@@ -882,24 +882,24 @@ def start():
 #introduce
 animacja_tekstu("Tatiana Cieslar, Dominika Limanowka")
 animacja_tekstu("Welcome in...")
-print "######   ##   ##  ####### "
-print "  ##     ##   ##   ##     "
-print "  ##     ##   ##   ##    "
-print "  ##     #######   ####  "
-print "  ##     ##   ##   ##     "
-print "  ##     ##   ##   ##      "
-print "  ##     ##   ##  #######  "
-print ""
-print "##   ##   #####   ##   ##   #####   #######"
-print "##   ##  ##   ##  ##   ##  ##   ##   ##    "
-print "##   ##  ##   ##  ##   ##  ##        ##     "
-print "#######  ##   ##  ##   ##   #####    ####  "
-print "##   ##  ##   ##  ##   ##       ##   ##      "
-print "##   ##  ##   ##  ##   ##  ##   ##   ##      "
-print "##   ##   #####    #####    #####   #######  "
-print ""
+print("######   ##   ##  ####### ")
+print("  ##     ##   ##   ##     ")
+print("  ##     ##   ##   ##    ")
+print("  ##     #######   ####  ")
+print("  ##     ##   ##   ##     ")
+print("  ##     ##   ##   ##      ")
+print("  ##     ##   ##  #######  ")
+print("")
+print("##   ##   #####   ##   ##   #####   #######")
+print("##   ##  ##   ##  ##   ##  ##   ##   ##    ")
+print("##   ##  ##   ##  ##   ##  ##        ##     ")
+print("#######  ##   ##  ##   ##   #####    ####  ")
+print("##   ##  ##   ##  ##   ##       ##   ##      ")
+print("##   ##  ##   ##  ##   ##  ##   ##   ##      ")
+print("##   ##   #####    #####    #####   #######  ")
+print("")
 animacja_tekstu("What's your name?")
-player_name = raw_input()
+player_name = input()
 os.system("cls")
 animacja_tekstu(("Hello, %s. Let's start!") % player_name)
 time.sleep(2)
